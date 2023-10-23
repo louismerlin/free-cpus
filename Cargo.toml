@@ -1,0 +1,16 @@
+[package]
+name = "free-cpus"
+version = "1.0.0"
+edition = "2021"
+description = "Get the set of free CPU cores on your linux machine."
+authors = ["Louis Merlin <hello@louismerl.in>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/louismerlin/free-cpus"
+homepage = "https://github.com/louismerlin/free-cpus"
+documentation = "https://docs.rs/free-cpus"
+keywords = ["cpu", "cpus", "cores", "free", "processes"]
+categories = ["hardware-support"]
+readme = "README.md"
+
+[dependencies]
+num_cpus = "1.16.0"
