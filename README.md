@@ -12,12 +12,12 @@ Add to Cargo.toml:
 
 ```toml
 [dependencies]
-free-cpus = "1.0.0"
+free-cpus = "2.0.0"
 ```
 
 In your rust code:
 
 ```rust
 // Get the set of free CPU cores on this Linux machine
-let cpus: HashMap<usize> = free_cpus::get();
+let cpus: HashMap<usize> = free_cpus::get().unwrap();
 ```
