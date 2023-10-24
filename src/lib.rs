@@ -47,6 +47,14 @@ pub fn get() -> Result<HashSet<usize>> {
 }
 
 #[cfg(not(target_os = "linux"))]
-pub fn get() -> HashSet<usize> {
-    unimplemented!("free-cpus is only implemented for Linux");
+pub fn get() -> Result<HashSet<usize>> {
+    anyhow::Error("free-cpus is only implemented for Linux")
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_runs() {
+        let _ = crate::get().unwrap();
+    }
 }
