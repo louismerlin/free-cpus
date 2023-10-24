@@ -8,7 +8,6 @@ use std::{
     fs::{read_dir, File},
     io::{BufRead, BufReader},
 };
-
 /// Returns the set of available core IDs in your Linux machine.
 ///
 /// Logic inspired by [AFL++'s code](https://github.com/AFLplusplus/AFLplusplus/blob/85c5b5218c6a7b2289f309fbd1625a5d0a602a00/src/afl-fuzz-init.c#L109-L452)
@@ -48,7 +47,7 @@ pub fn get() -> Result<HashSet<usize>> {
 
 #[cfg(not(target_os = "linux"))]
 pub fn get() -> Result<HashSet<usize>> {
-    Err(anyhow::Error("free-cpus is only implemented for Linux"))
+    Err(anyhow::anyhow!("free-cpus is only implemented for Linux"))
 }
 
 #[cfg(test)]
