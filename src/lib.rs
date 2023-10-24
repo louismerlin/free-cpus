@@ -48,7 +48,7 @@ pub fn get() -> Result<HashSet<usize>> {
 
 #[cfg(not(target_os = "linux"))]
 pub fn get() -> Result<HashSet<usize>> {
-    anyhow::Error("free-cpus is only implemented for Linux")
+    Err(anyhow::Error("free-cpus is only implemented for Linux"))
 }
 
 #[cfg(test)]
